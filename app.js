@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const colors = require('colors');
 const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/authRoutes');
+const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
 const app = express();
 
@@ -23,8 +24,9 @@ mongoose.connect('mongodb://localhost:27017/recipeDB', { useNewUrlParser: true, 
     }
 });
 // routes
+app.get('*', checkUser);
 app.get('/', (req, res) => res.render('home'));
-app.get('/smoothies', (req, res) => res.render('smoothies'));
+app.get('/smoothies', requireAuth, (req, res) => res.render('smoothies'));
 app.use(authRoutes);
 
 // PORT
