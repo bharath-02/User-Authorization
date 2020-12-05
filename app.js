@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 
 // database connection
-const dbURI = 'mongodb://localhost:27017/recipeDB';
+const dbURI = process.env.DBURL || 'mongodb://localhost:27017/recipeDB';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (err) => {
     if (err) {
         console.log('Error Occured');
