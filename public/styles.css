@@ -106,6 +106,13 @@ button {
     letter-spacing: 2px;
 }
 
+.successMessage {
+    color: red;
+    margin: 10px 2px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
 .error {
     color: #ff0099;
     margin: 10px 2px;
@@ -116,6 +123,12 @@ button {
 .newuser {
     font-size: 15px;
     margin-top: 15px;
+}
+
+.forgot {
+    float: right;
+    font-size: 15px;
+    text-decoration: underline;
 }
 
 .new {
