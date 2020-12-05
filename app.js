@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 const dbURI = process.env.DBURL || 'mongodb://localhost:27017/recipeDB';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (err) => {
     if (err) {
-        console.log('Error Occured');
+        console.log('Error Occured while connecting to database');
     } else {
         console.log('Server connected to mongoDB');
     }
